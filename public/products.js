@@ -1,4 +1,4 @@
-const productContainer = document.getElementById("products");
+const productList = document.querySelector(".products-list");
 
 fetch("https://fakestoreapi.com/products").then((res) => res.json()).then((products) => products.forEach((product) => {
     const card = document.createElement("div");
@@ -12,8 +12,8 @@ fetch("https://fakestoreapi.com/products").then((res) => res.json()).then((produ
         <button>Add to cart</button>
     `;
 
-    productContainer.appendChild(card);
+    productList.appendChild(card);
 })).catch((err) => {
     console.log(err);
-    productContainer.innerHTML = "Failed to load products";
+    productList.innerHTML = "Failed to load products";
 })
